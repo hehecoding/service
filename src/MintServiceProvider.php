@@ -14,6 +14,7 @@ class MintServiceProvider extends ServiceProvider
     public function boot()
     {
         include __DIR__.'/routes/web.php';
+        include __DIR__.'/routes/api.php';
     }
 
     /**
@@ -23,5 +24,7 @@ class MintServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->make('Mint\Service\Controllers\InstallController');
+        $this->app->make('Mint\Service\Controllers\UpdateController');
     }
 }

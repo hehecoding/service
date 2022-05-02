@@ -1,4 +1,5 @@
 <?php
-Route::get('/test',function(){
-	return 'test';
-});
+	Route::namespace('Mint\Service\Controllers')->prefix('api')->group(function () {
+		Route::get('/migrate', 'InstallController@forceMigrate');
+	});
+?>
